@@ -3,12 +3,14 @@
 A modern ELT pipeline that extracts Google Shopping data from SerpAPI, stores it in DuckDB, and transforms it using dbt into analytics-ready models.
 
 The project demonstrates a complete data engineering workflow, including data extraction, storage, transformation, testing, incremental models, snapshots, and dimensional modeling.
-![Uploading image.png…]()
 
 ---
 
 # Architecture
 
+<p align="center">
+  <img src="assets/architecture.png" alt="Project Architecture" width="1000"/>
+</p>
 ```
 SerpAPI
     │
