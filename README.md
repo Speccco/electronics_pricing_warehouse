@@ -69,5 +69,3 @@ electronics_pricing_warehouse/
 - DuckDB
 - dbt
 - SerpAPI
-
-...
