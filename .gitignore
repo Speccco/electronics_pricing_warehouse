@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.hypothesis/
+.ipynb_checkpoints/
+.coverage
+coverage.xml
+htmlcov/
+
+# Environment files
+.env
+.env.*
+*.env
+
+# Logs
+logs/
+*.log
+
+# dbt
+**/target/
+**/dbt_packages/
+**/logs/
+**/dbt_modules/
+
+# Generated data / warehouse outputs
+**/data/raw/
+**/data/processed/
+**/data/warehouse/
+*.duckdb
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: shopping_results
+        description: Raw shopping results loaded from DuckDB by the Python loader.

@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: Product dimension containing one row per product.
+    columns:
+      - name: product_id
+        description: Logical primary key for the product dimension.
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_source
+    description: Source dimension with one row per source.
+    columns:
+      - name: source_key
+        description: Surrogate key generated from row_number().
+        tests:
+          - not_null
+          - unique
+
+      - name: source
+        description: Source name.
+        tests:
+          - not_null
+  - name: fct_product_listings
+    description: Product Listings fact table with a grain of one row per product.
+    columns:
+      - name: product_id
+        description: ID of the product.
+        tests:
+          - relationships:
+              to: ref('dim_product')
+              field: product_id
+      - name: source_key
+        description: Surrogate key generated from row_number()
+        tests:
+          - relationships:
+              to: ref('dim_source')
+              field: source_key
+      - name: captured_at
+        description: Date column that keeps track of when every row was originally added
+        tests:
+          - relationships:
+              to: ref('dim_date')
+              field: date

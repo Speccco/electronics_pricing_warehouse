@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_shopping_results
+    description: Staging layer for shopping results
+    columns:
+      - name: product_id
+        description: Product ID
+        tests:
+          - not_null
+      - name: second_hand_condition
+        description: Used before
+        tests:
+          - accepted_values:
+              values: [true, false]
